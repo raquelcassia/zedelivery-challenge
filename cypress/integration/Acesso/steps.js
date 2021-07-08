@@ -28,13 +28,13 @@ When(/^o usuario clica no botao Entrar$/, () => {
 
 //Cliente com mais de 18 anos quer acessar seu cadastro com dados corretos 
 
-Then(/^o usuario terá acesso a página principal da sua conta com sucesso.$/, () => {
+Then(/^o usuario terá acesso a página principal da sua conta com sucesso$/, () => {
 	return true;
 });
 
 //Cliente com mais de 18 anos quer acessar seu cadastro com Email incorreto
 
-Then(/^será retornado uma mensagem de aviso E-mail não encontrado.$/, () => {
+Then(/^será retornado uma mensagem de aviso E-mail não encontrado$/, () => {
 	return true;
 });
 
