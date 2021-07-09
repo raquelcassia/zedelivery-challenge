@@ -5,8 +5,9 @@ Scenario: Cliente com mais de 18 anos quer acessar seu cadastro com dados corret
 
     Given o usuario acessa o site "https://www.ze.delivery/"
     And o cliente informa que tem 18 anos ou mais
-    And insere Email ""
-    And insere Senha ""
+    And clica no botão Entrar
+    And insere Email "email_cliente"
+    And insere Senha "senha_cliente"
     When o usuario clica no botao Entrar
     Then o usuario terá acesso a página principal da sua conta com sucesso
 
@@ -14,8 +15,9 @@ Scenario: Cliente com mais de 18 anos quer acessar seu cadastro com Email incorr
 
     Given o usuario acessa o site "https://www.ze.delivery/"
     And o cliente informa que tem 18 anos ou mais
-    And insere Email ""
-    And insere Senha ""
+    And clica no botão Entrar
+    And insere Email "email_errado"
+    And insere Senha "senha_cliente"
     When o usuario clica no botao Entrar
     Then será retornado uma mensagem de aviso E-mail não encontrado
 
@@ -23,7 +25,8 @@ Scenario: Cliente com mais de 18 anos quer acessar seu cadastro com senha incorr
  
     Given o usuario acessa o site "https://www.ze.delivery/"
     And o cliente informa que tem 18 anos ou mais
-    And insere Email ""
-    And insere Senha ""
+    And clica no botão Entrar
+    And insere Email "email_cliente"
+    And insere Senha "senha_errada"
     When o usuario clica no botao Entrar
     Then será retornado uma mensagem de aviso Senha inválida
