@@ -30,17 +30,17 @@ When(/^o usuario clica no botao Entrar$/, () => {
 //Cliente com mais de 18 anos quer acessar seu cadastro com dados corretos 
 
 Then(/^o usuario terá acesso a página principal da sua conta com sucesso$/, () => {
-	cy.get("#global-message-Sucesso", { timeout: 30000 }).should("contain", "Sucesso");
+	cy.get("#global-message-Sucesso", {timeout:30000}).should("contain","Sucesso");
 });
 
 //Cliente com mais de 18 anos quer acessar seu cadastro com Email incorreto
 
 Then(/^será retornado uma mensagem de aviso E-mail não encontrado$/, () => {
-	cy.contains("E-mail não encontrado.", { timeout: 30000 }).should("contain", "E-mail não encontrado.");
+	cy.contains("E-mail não encontrado.", {timeout:30000}).should("contain","E-mail não encontrado.");
 });
 
 //Cliente com mais de 18 anos quer acessar seu cadastro com senha incorreta
 
 Then(/^será retornado uma mensagem de aviso Senha inválida$/, () => {
-	cy.contains("Senha inválida", { timeout: 30000 }).should("contain", "Senha inválida");
+	cy.contains("Senha inválida", {timeout:30000}).should("contain","Senha inválida");
 });

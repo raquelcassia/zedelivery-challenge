@@ -1,8 +1,9 @@
 Feature: Sacola 
 
  Eu quero modificar a quantidade e unidade de produtos na minha sacola antes de confirmar a compra
-   
+
 Background: Cliente deseja ver sacola 
+
     
     Given que o cliente está no painel de sacola
 
