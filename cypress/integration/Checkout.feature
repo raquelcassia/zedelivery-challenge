@@ -1,4 +1,4 @@
-Feature: Busca por Produto
+Feature: Página de Checkout
 
     Eu quero confirmar minhas informações e inserir uma instrução para o distribuidor
 
