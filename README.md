@@ -1,4 +1,4 @@
-# QA Challenge
+# [Zé Delivery]  QA Challenge
 >*Desafio de Testes Automatizados Zé Delivery*
 
 ---
@@ -46,7 +46,7 @@ Para isso, o usuário deverá acessar o link www.ze.delivery, selecionar a opç�
 
 Já na página inicial, deverá verificar no canto superior esquerdo se o endereço selecionado é aonde deseja que a entrega seja realizada, para que o catalogo de produtos esteja de acordo com a sua região. 
 
-Após isso, poderá navegar pela plataforma através das abas na parte superior do catálogo ou pelos menus centrais abaixo. Ao encontrar o produto desejado, poderá clicar na imagem para ser redirecionado à página do produto, aonde poderá visualizar suas informações e selecionar quantas unidades do mesmo deseja par envia-lo à sacola.
+Após isso, poderá navegar pela plataforma através das abas na parte superior do catálogo ou pelos menus centrais abaixo. Ao encontrar o produto desejado, poderá clicar na imagem para ser redirecionado à página do produto, aonde poderá visualizar suas informações e selecionar quantas unidades do mesmo deseja para envia-lo à sacola.
 
 Em seguida será apresentado na tela sua sacola, com o valor unitário dos produtos e seu valor total referente à quantidade selecionada e o frete. Nesta sacola você poderá adicionar ou remover produtos e também alterar sua quantidade. Um ponto importante a ser observado, é que alguns parceiros possuem valor mínimo por pedido, desta forma, para prosseguir a compra, o usuário deverá completar o valor mínimo necessário. 
 
@@ -56,14 +56,110 @@ Para concluir a compra, deverá selecionar a opção “Selecionar Forma de Paga
 
 ---
 
-### 2. Teste de automação de IU / 3. Teste de automação de API
+### 2. Teste de automação de IU 
 
-- Os projetos foram criados nas pastas
+>*Fluxo Crítico Escolhido: Fluxo de Compra*
+
+-----------------------
 
 
-  - zedelivery_web
-  -  openweathe_api
+Repositório com o desafio técnico de testes automatizados para o site [Zé Delivery](https://www.ze.delivery/) utilizando:
 
-<br/>
+  - JavaScript
+  - Cypress
+  - Cypress Cucumber Preprocessor
+  
+Hoje precisamos ter testes mais rápidos, fáceis e confiáveis para qualquer coisa que seja executada em um navegador ou por serviços.<br/>
+Inicialmente comecei os meus testes com a linguagem Java e utilizando Selenium como framework, mas neste projeto optei em utilizar o Cypress por ele ser um framework mais amigável, tanto visualmente quanto para codificação, e o Cucumber com estrutura Gherkin por ser totalmente legível para qualquer leitor e ajuda a economizar tempo na reutilização de steps.
 
-Dentro de cada projeto tem as intruções de como rodar os testes nos arquivos README.
+> O **Cypress** veio para realizar esses testes rápidos, fáceis e confiáveis: [CONHECER CYPRESS](https://github.com/cypress-io/cypress)
+
+-----------------------
+
+
+## Tabela de Contexto
+
+> Índice `README`.
+  - [Pré Requisitos](#pré-requisitos)
+  - [Instalação](#instalação)
+  - [Configuração](#configuração)
+  - [Como Testar](#como-testar)
+  - [Documentações](#documentações)  
+  - [Suporte](#suporte)
+
+
+-----------------------
+
+### Pré Requisitos
+
+- [node e npm](https://nodejs.org/en/)
+- [vscode ou outra IDE](https://code.visualstudio.com/download)
+- [cypress](https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements)
+
+-----------------------
+
+### Instalação
+
+> Clonar projeto
+- Clonar este repositório usando _ssh_ ou _https_.
+
+> exemplo:
+```js
+$ git clone https://github.com/raquelcassia/zedelivery-challenge.git
+```
+
+- Através de um terminal, navegue até o diretório do projeto e instale as dependências npm com o comando:
+
+```js
+$ npm install
+```
+-----------------------
+
+### Configuração
+
+- Localizar o arquivo na raiz do projeto chamado _cypress.env.json_ e alterar o valor das variáveis `email_cliente` e `senha_cliente` para dados de login válidos:
+
+```json
+{
+    "email_cliente": "nomecliente@email.com",
+    "senha_cliente": "senhacliente"
+}
+```
+
+**Nota Importante:** Isso foi feito para simular uma possível _"não exposição"_ para o tratamento quanto a dados sensíveis. 
+
+-----------------------
+
+### Como testar
+
+> Para rodar os testes no modo interativo do cypress:
+```js
+$ npx cypress open
+```
+
+-----------------------
+
+### Documentações
+
+Para documentação de palavras-chave individuais, consulte o seguinte:
+
+ - [Documentação Cypress](https://docs.cypress.io/guides/overview/why-cypress)
+ - [Documentação Cucumber](https://cucumber.io/docs/cucumber/)
+ - [Documentação Gherkin](https://cucumber.io/docs/gherkin/reference/)
+ - [Link Auxiliar - Gherkin](https://blog.onedaytesting.com.br/gherkin/)
+ - [Link Auxiliar - Cucumber](https://medium.com/cwi-softwaretestes-automatizados-com-cypress-e-cucumber-d78b211da766)
+ 
+-----------------------
+
+### Suporte
+
+- Linkedin: <a href="https://www.linkedin.com/in/raqueldecassiasc/" target="_blank">**Raquel de Cássia**</a> :ghost:
+
+- E-mail: **rcassia_scarvalho@hotmail.com**
+
+
+-----------------------
+
+
+
+
