@@ -73,9 +73,8 @@ Hoje precisamos ter testes mais rápidos, fáceis e confiáveis para qualquer co
 Inicialmente comecei os meus testes com a linguagem Java e utilizando Selenium como framework, mas neste projeto optei em utilizar o Cypress por ele ser um framework mais amigável, tanto visualmente quanto para codificação, e o Cucumber com estrutura Gherkin por ser totalmente legível para qualquer leitor e ajuda a economizar tempo na reutilização de steps.
 
 > O **Cypress** veio para realizar esses testes rápidos, fáceis e confiáveis: [CONHECER CYPRESS](https://github.com/cypress-io/cypress)
-
+> 
 -----------------------
-
 
 ## Tabela de Contexto
 
@@ -149,6 +148,12 @@ Para documentação de palavras-chave individuais, consulte o seguinte:
  - [Link Auxiliar - Gherkin](https://blog.onedaytesting.com.br/gherkin/)
  - [Link Auxiliar - Cucumber](https://medium.com/cwi-softwaretestes-automatizados-com-cypress-e-cucumber-d78b211da766)
  
+-----------------------
+
+## 3. Teste de automação de API
+
+ :triangular_flag_on_post: A etapa seguinte do desafio poderá ser visualizada através do repositorio [openweather-api](https://github.com/raquelcassia/openweather-api).
+
 -----------------------
 
 ### Suporte
