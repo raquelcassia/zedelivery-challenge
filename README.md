@@ -72,8 +72,6 @@ Repositório com o desafio técnico de testes automatizados para o site [Zé Del
 Hoje precisamos ter testes mais rápidos, fáceis e confiáveis para qualquer coisa que seja executada em um navegador ou por serviços.<br/>
 Inicialmente comecei os meus testes com a linguagem Java e utilizando Selenium como framework, mas neste projeto optei em utilizar o Cypress por ele ser um framework mais amigável, tanto visualmente quanto para codificação, e o Cucumber com estrutura Gherkin por ser totalmente legível para qualquer leitor e ajuda a economizar tempo na reutilização de steps.
 
-> O **Cypress** veio para realizar esses testes rápidos, fáceis e confiáveis: [CONHECER CYPRESS](https://github.com/cypress-io/cypress)
-> 
 -----------------------
 
 ## Tabela de Contexto
