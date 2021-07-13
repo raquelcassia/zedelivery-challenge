@@ -20,7 +20,7 @@ Scenario: Cliente quer verificar o valor total da compra e seguir para a página
 Scenario: Cliente quer confirmar o endereço Estrada de Jacarepaguá, 7655
 
     Given que o cliente queira confirmar o endereco apresentado na tela
-        Then o endereço deverá ser "Rua Uruguaiana, 160"
+        Then o endereço deverá ser "Estrada de Jacarepaguá, 7655"
 
 Scenario: Cliente quer inserir uma instrução para o distribuidor 
 
