@@ -18,7 +18,9 @@ Cypress.Commands.add("login_e_busca", () => {
     } */
 
     cy.get("#bag-pre-checkout").click();
-    cy.get("#pre-checkout").should("be.visible") 
+    cy.get("#pre-checkout").should("be.visible")
+    cy.wait(10000);
+    cy.log(Cypress.$("#product-delete-button").length);
         if (Cypress.$(".css-xafw2q").length > 0) {
             cy.get(".css-xafw2q").each(($elemt) => {
                 cy.wrap($elemt).click();
@@ -40,8 +42,9 @@ Cypress.Commands.add("login_busca_painel", () => {
 
 Cypress.Commands.add("pag_checkout", () => {
     cy.login_e_busca();
-    cy.get(".css-1f3b3q5-addCustomButton", { timeout: 60000 }).click({ force: true });
+    cy.get("#add-amount-6", { timeout: 60000 }).click({ force: true });
     cy.get("#add-product").click({ force: true });
+    cy.get("#finish-order").click();
 })
 
 Cypress.Commands.add("pag_payment", () => {
