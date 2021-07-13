@@ -1,6 +1,6 @@
 Feature: Página de Metodo de Pagamento
 
-    Eu quero escolher a opçõ de pagamento e confirmar minha compra
+    Eu quero escolher a opção de pagamento e confirmar minha compra
 
 Background: Cliente acessa pagina Metodo de Pagamento
 

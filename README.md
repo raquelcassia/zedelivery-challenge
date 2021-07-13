@@ -3,11 +3,9 @@
 
 ---
 
-
 ### 1. Identificação dos Fluxos Críticos
 
-
-   **:triangular_flag_on_post:	  Fluxo de Cadastro de Novo Usuário**
+   **:triangular_flag_on_post:    Fluxo de Cadastro de Novo Usuário**
   
     
 Esta funcionalidade permite que o usuário acesse a tela de login para que possam se cadastrar e, assim, fazerem uso das funcionalidades presentes no sistema.
@@ -25,8 +23,7 @@ Para o fluxo de cadastro de novo usuário é necessário que seja simples, diret
 
 <br/>
 
-   **:triangular_flag_on_post:	  Fluxo de Verificação de Produtos Disponíveis na Região através do Endereço**
-
+   **:triangular_flag_on_post:    Fluxo de Verificação de Produtos Disponíveis na Região através do Endereço**
 
 Esta funcionalidade possibilita que o sistema direcione o usuário ao parceiro mais adequado de acordo com o endereço informado. 
 
@@ -38,7 +35,7 @@ Caso o usuário opte na entrega em um endereço diferente do primeiro informado,
 
 <br/>
 
-   **:triangular_flag_on_post:	  Fluxo de Compra**
+   **:triangular_flag_on_post:    Fluxo de Compra**
 
 Esta funcionalidade viabiliza que o usuário tenha a melhor experiência na realização das suas compras de acordo com o catálogo disponível para sua região.  Através dela, o mesmo escolherá seus produtos, adicionará à sacola e finalizará o pedido com total segurança e confiança na plataforma. 
 
@@ -62,14 +59,13 @@ Para concluir a compra, deverá selecionar a opção “Selecionar Forma de Paga
 
 -----------------------
 
-
 Repositório com o desafio técnico de testes automatizados para o site [Zé Delivery](https://www.ze.delivery/) utilizando:
 
   - JavaScript
   - Cypress
   - Cypress Cucumber Preprocessor
   
-Hoje precisamos ter testes mais rápidos, fáceis e confiáveis para qualquer coisa que seja executada em um navegador ou por serviços.<br/>
+Hoje precisamos ter testes mais rápidos, fáceis e confiáveis para qualquer coisa que seja executada em um navegador ou por serviços.
 Inicialmente comecei os meus testes com a linguagem Java e utilizando Selenium como framework, mas neste projeto optei em utilizar o Cypress por ele ser um framework mais amigável, tanto visualmente quanto para codificação, e o Cucumber com estrutura Gherkin por ser totalmente legível para qualquer leitor e ajuda a economizar tempo na reutilização de steps.
 
 -----------------------
@@ -81,11 +77,11 @@ Inicialmente comecei os meus testes com a linguagem Java e utilizando Selenium c
   - [Instalação](#instalação)
   - [Configuração](#configuração)
   - [Como Testar](#como-testar)
+  - [Observações Importantes](#observações-importantes)
   - [Documentações](#documentações)  
   - [Suporte](#suporte)
 
-
------------------------
+----------------------- 
 
 ### Pré Requisitos
 
@@ -97,10 +93,10 @@ Inicialmente comecei os meus testes com a linguagem Java e utilizando Selenium c
 
 ### Instalação
 
-> Clonar projeto
+>######  Clonar projeto
 - Clonar este repositório usando _ssh_ ou _https_.
 
-> exemplo:
+>###### Exemplo:
 ```js
 $ git clone https://github.com/raquelcassia/zedelivery-challenge.git
 ```
@@ -116,23 +112,38 @@ $ npm install
 
 - Localizar o arquivo na raiz do projeto chamado _cypress.env.json_ e alterar o valor das variáveis `email_cliente` e `senha_cliente` para dados de login válidos:
 
-```json
+```js
 {
-    "email_cliente": "nomecliente@email.com",
+    "email_cliente": "emailcliente@email.com",
     "senha_cliente": "senhacliente"
 }
 ```
 
-**Nota Importante:** Isso foi feito para simular uma possível _"não exposição"_ para o tratamento quanto a dados sensíveis. 
+:pushpin: **Nota Importante:** Isso foi feito para simular uma possível _"não exposição"_ para o tratamento quanto a dados sensíveis. 
 
 -----------------------
 
 ### Como testar
 
-> Para rodar os testes no modo interativo do cypress:
+>###### Limpar Sacola do Usuário Antes dos Testes:
+
+:anger: O teste em cada Steps deve-se ser iniciado com a sacola de produtos vazia, portanto acesse o cadastro do usuário no browser de sua preferência **(não utilizar o browser em modo operativo do Cypress)** e exclua os itens que possam estar na sacola do usuário.
+
+>###### Para rodar os testes no modo interativo do cypress, abra o terminal em sua IDE e utilize o comando:
 ```js
 $ npx cypress open
 ```
+
+-----------------------
+
+
+### Observações Importantes
+
+:bomb: No arquivo ```MetodoPagamento.feature```, os cenários de testes contém a ultima etapa ```Then``` comentadas, pois como o teste é realizado em um ambiente de produção, a solução implementada foi escrever a validação da funcionalidade e comentar esse trecho do código para que a ação não fosse realizada no ambiente de produção.
+
+:bomb: Foi observado que dependendo do horário em que for realizado o teste, alguns steps podem falhar por ```timeout```, pois o site pode apresentar comportamentos intermitentes. O melhor período para realizar os testes seria fora dos horários de pico. 
+
+:bomb: Na feature de Método de Pagamento, no caso de teste ```Cliente quer realizar o pagamento com Dinheiro inserindo troco menor que o valor total da compra```, a mensagem **"Valor do troco menor que o total a pagar"** que deve ter sua apresentação na tela validada na etapa ```Then```, só irá ser apresentada no browser em modo operativo do Cypress quando o Tester após inserir o valor e clicar fora do campo. 
 
 -----------------------
 
@@ -144,13 +155,13 @@ Para documentação de palavras-chave individuais, consulte o seguinte:
  - [Documentação Cucumber](https://cucumber.io/docs/cucumber/)
  - [Documentação Gherkin](https://cucumber.io/docs/gherkin/reference/)
  - [Link Auxiliar - Gherkin](https://blog.onedaytesting.com.br/gherkin/)
- - [Link Auxiliar - Cucumber](https://medium.com/cwi-softwaretestes-automatizados-com-cypress-e-cucumber-d78b211da766)
+ - [Link Auxiliar - Cucumber](https://medium.com/cwi-software/testes-automatizados-com-cypress-e-cucumber-d78b211da766)
  
 -----------------------
 
 ## 3. Teste de automação de API
 
- :triangular_flag_on_post: A etapa seguinte do desafio poderá ser visualizada através do repositorio [openweather-api](https://github.com/raquelcassia/openweather-api).
+ :pushpin: A etapa seguinte do desafio poderá ser visualizada através do repositorio [openweather-api](https://github.com/raquelcassia/openweather-api).
 
 -----------------------
 
@@ -160,9 +171,5 @@ Para documentação de palavras-chave individuais, consulte o seguinte:
 
 - E-mail: **rcassia_scarvalho@hotmail.com**
 
-
 -----------------------
-
-
-
 
