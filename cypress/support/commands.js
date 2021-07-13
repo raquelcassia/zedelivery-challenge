@@ -20,14 +20,33 @@ Cypress.Commands.add("login_e_busca", () => {
     cy.get("#bag-pre-checkout").click();
     cy.get("#pre-checkout").should("be.visible")
     cy.wait(10000);
-    cy.log(Cypress.$("#product-delete-button").length);
-        if (Cypress.$(".css-xafw2q").length > 0) {
+
+    cy.get("#pre-checkout").should("be.visible")
+    if (Cypress.$(".css-xafw2q").length > 0) {
+        cy.get(".css-xafw2q").each(($elemt) => {
+            cy.wrap($elemt).click();
+            cy.get("#primary-modal-button").click().pause();
+        });
+    }
+/* 
+
+    cy.get("body").find("#product-delete-button").its("length").then( res => {
+        if (res > 0) {
+            cy.get("#product-delete-button").each(($elemt) => {
+                cy.wrap($elemt).click({ force: true });
+                cy.get("#primary-modal-button").click().pause();
+            });
+        }} 
+    ); */
+
+   /* cy.log(Cypress.$("#product-delete-button").length);
+            if (Cypress.$(".css-xafw2q").length > 0) {
             cy.get(".css-xafw2q").each(($elemt) => {
-                cy.wrap($elemt).click();
+                cy.wrap($elemt).click({ force: true });
                 cy.get("#primary-modal-button").click().pause();
             });
         }
-    
+     */
     cy.get("#sidebar-header-close-button").click();
     cy.get("#search-product-input", { timeout: 60000 }).type("Beats Senses 313ml - Unidade");
     cy.contains("Beats Senses 313ml - Unidade", { timeout: 30000 }).click({ force: true });
@@ -44,11 +63,11 @@ Cypress.Commands.add("pag_checkout", () => {
     cy.login_e_busca();
     cy.get("#add-amount-6", { timeout: 60000 }).click({ force: true });
     cy.get("#add-product").click({ force: true });
-    cy.get("#finish-order").click();
+    cy.get("#finish-order").click({ force: true });
 })
 
 Cypress.Commands.add("pag_payment", () => {
     cy.pag_checkout();
-    cy.get("#finish-order").click();
+    cy.get("#finish-order").click({ force: true });
 
 })
