@@ -4,8 +4,7 @@ import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 // Cliente deseja ver sacola
 
 Given(/^que o cliente está no painel de sacola$/, () => {
-    cy.login_busca_painel();
-    
+    cy.login_busca_painel();    
 });
 
 
