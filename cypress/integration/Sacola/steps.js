@@ -34,18 +34,21 @@ And(/^o botao Continuar Compra estará desabilitado$/, () => {
 
 Given(/^que cliente tem adicionado 2 unidades do produto na sacola$/, () => {
     cy.get("#product-plus-button").click();
-    cy.get("#product-amount", { timeout: 30000 }).should("contain", "02");
+    cy.get("#product-amount", { timeout: 30000 }).should("contain", "02").pause();
 });
 
 When(/^o cliente adicionar mais 1 unidade do produto$/, () => {
     cy.get("#product-plus-button").click();
+    cy.wait(50000);
 });
 
 Then(/^a mensagem informando valor faltante para completar valor minimo desaparece$/, () => {
     cy.get("#progress-bar", { timeout: 50000 }).should('not.be.visible');
+    cy.wait(50000);
+
 });
 Then(/^o botao Continuar Compra é habilitado$/, () => {
-    cy.get("#finish-order").should('be.visible')
+    cy.get("#finish-order").should('not.be.disabled')
 });
 
 
